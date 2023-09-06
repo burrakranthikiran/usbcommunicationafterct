@@ -14,7 +14,38 @@
   </ion-header>
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+    <div style="width: 50%; float:left">
+      <ion-card style="height: 200PX; background-color: aliceblue;" (click)="printBT()">
+      
+        <ion-card-content style="margin-top: 50%; color: black;">
+         Bluetooth Printer
+        </ion-card-content>
+      </ion-card>
+   </div>
+   
+   <div style="width: 50%; float:right">
+    <ion-card style="height: 200PX; background-color: aliceblue;">
+      
+      <ion-card-content style="margin-top: 50%; color: black;">
+        USB Printer
+      </ion-card-content>
+    </ion-card>
+   </div>
+   <div style="width: 50%; float:left" >
+    <ion-card style="height: 200PX; background-color: aliceblue;" (click)="MobileSettings()">
+    
+      <ion-card-content style="margin-top: 50%; color: black;">
+       Mobile Settings
+      </ion-card-content>
+    </ion-card>
+ </div>
+ 
+ <div style="width: 50%; float:right">
+  <ion-card style="height: 200PX; background-color: aliceblue;" (click)="viberation()">
+    <ion-card-content style="margin-top: 50%; color: black;">
+      Viberation
+    </ion-card-content>
+  </ion-card>
+ </div>
+</div>
 </ion-content>
