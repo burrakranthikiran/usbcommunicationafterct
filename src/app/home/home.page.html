@@ -24,10 +24,11 @@
    </div>
    
    <div style="width: 50%; float:right">
-    <ion-card style="height: 200PX; background-color: aliceblue;">
+    <ion-card style="height: 200PX; background-color: aliceblue;" (click)="USBPrinter()">
       
       <ion-card-content style="margin-top: 50%; color: black;">
         USB Printer
+        <p>{{device_status}}</p>
       </ion-card-content>
     </ion-card>
    </div>
