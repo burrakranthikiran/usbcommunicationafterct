@@ -1,8 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title> Blank </ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -14,39 +12,10 @@
   </ion-header>
 
   <div id="container">
-    <div style="width: 50%; float:left">
-      <ion-card style="height: 200PX; background-color: aliceblue;" (click)="printBT()">
-      
-        <ion-card-content style="margin-top: 50%; color: black;">
-         Bluetooth Printer
-        </ion-card-content>
-      </ion-card>
-   </div>
-   
-   <div style="width: 50%; float:right">
-    <ion-card style="height: 200PX; background-color: aliceblue;" (click)="USBPrinter()">
-      
-      <ion-card-content style="margin-top: 50%; color: black;">
-        USB Printer
-        <p>{{device_status}}</p>
-      </ion-card-content>
-    </ion-card>
-   </div>
-   <div style="width: 50%; float:left" >
-    <ion-card style="height: 200PX; background-color: aliceblue;" (click)="MobileSettings()">
-    
-      <ion-card-content style="margin-top: 50%; color: black;">
-       Mobile Settings
-      </ion-card-content>
-    </ion-card>
- </div>
- 
- <div style="width: 50%; float:right">
-  <ion-card style="height: 200PX; background-color: aliceblue;" (click)="viberation()">
-    <ion-card-content style="margin-top: 50%; color: black;">
-      Viberation
-    </ion-card-content>
-  </ion-card>
- </div>
-</div>
+    <ion-button (click)="printBT()"> Bluetooth Printer </ion-button>
+    <ion-button (click)="USBPrinter()"> USB Printer  <p>{{device_status}}</p></ion-button>
+    <ion-button (click)="USBPrinterImage()"> USB Printer Image <p>{{device_status}}</p></ion-button>
+    <ion-button (click)="MobileSettings()">  Mobile Settings <p>{{device_status}}</p></ion-button>
+    <ion-button (click)="viberation()">  Viberation <p>{{device_status}}</p></ion-button>
+  </div>
 </ion-content>
