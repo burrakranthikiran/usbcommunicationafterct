@@ -49,6 +49,8 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+
+
 @CapacitorPlugin(name = "MyStatusBar")
 public class StatusBarPlugin extends Plugin {
   private static final String ACTION_USB_PERMISSION = "io.ionic.starter.USB_PERMISSION";

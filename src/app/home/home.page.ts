@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicModule, Platform } from '@ionic/angular';
+import { IonicModule, Platform, ToastController } from '@ionic/angular';
 import MyStatusBar from '../myPlugin/StatusBar';
 import { ThermalPrinterPlugin } from 'thermal-printer-cordova-plugin/src';
+import {Router} from '@angular/router'
 // import EscPosEncoder from 'esc-pos-encoder';
 import sharp from 'sharp';
 import EscPosEncoder from 'esc-pos-encoder-qzone-custom';
@@ -17,11 +18,19 @@ declare let ThermalPrinter: ThermalPrinterPlugin;
 })
 export class HomePage {
   device_status = 'Device ID: ' + 'null';
-  constructor(private platform: Platform) {
+  constructor(private platform: Platform,private toastController: ToastController, private router: Router) {
     this.platform.ready().then(() => {
       this.getStatusBarHeight();
       this.getStatusPermission();
     });
+  }
+
+  async presentToast(message: string) {
+    const toast = await this.toastController.create({
+      message: message,
+      duration: 2000
+    });
+    toast.present();
   }
 
   printBT() {
@@ -127,9 +136,11 @@ export class HomePage {
             },
             function (error) {
               console.error('Printing error', JSON.stringify(error));
+              self.presentToast('Printing error: ' + JSON.stringify(error));
             }
           );
         } else {
+          self.presentToast('No printers found!');
           console.error('No printers found!');
         }
       },
@@ -139,9 +150,10 @@ export class HomePage {
     );
   }
 
-  USBPrinterImage() {
+  async USBPrinterImage() {
     console.log('555555555555555555', 'working');
     const self = this;
+    const kranthi = await MyStatusBar.getPermission();
     ThermalPrinter.listPrinters(
       { type: 'usb' },
       function (printers) {
@@ -201,7 +213,14 @@ export class HomePage {
             let result = encoder
                   .align('center')
                   .image(img, width, height, 'atkinson',255) // Use 'dither', 'threshold', or 'atkinson'
-
+                  .newline()
+                  .newline()
+                  .newline()
+                  .line('Burra Kranthi Kiran')
+                  .newline()
+                  .newline()
+                  .newline()
+                  .newline()
                   .cut()
                   .encode();
               
@@ -236,6 +255,10 @@ export class HomePage {
         console.error("Ups, we can't list the printers!", error);
       }
     );
+  }
+
+  Background(){
+    this.router.navigate(['/background'])
   }
   
 

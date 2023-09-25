@@ -31,6 +31,7 @@
     "@ionic-native/core": "^5.36.0",
     "@ionic/angular": "^7.0.0",
     "@mineminemine/esc-pos-encoder-ionic": "^2.0.3",
+    "contacts-plugin": "file:../../plugin_status/contacts-plugin",
     "cordova-plugin-android-permissions": "^1.1.5",
     "esc-pos-encoder": "^2.0.1",
     "esc-pos-encoder-qzone-custom": "^1.1.16",

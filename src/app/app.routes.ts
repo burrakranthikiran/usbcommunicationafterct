@@ -10,4 +10,8 @@ export const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full',
   },
+  {
+    path: 'background',
+    loadComponent: () => import('./background/background.page').then( m => m.BackgroundPage)
+  },
 ];
